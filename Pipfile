@@ -9,6 +9,10 @@ pandas = "*"
 keras = "*"
 matplotlib = "*"
 kaggle = "*"
+awscli = "*"
+tensorflow = "*"
+torch = "*"
+torchvision = "*"
 
 [dev-packages]
 
