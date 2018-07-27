@@ -1,6 +1,7 @@
 # Manually added
 *.csv
 .DS_store
+*.weights
 
 ####################################
 
