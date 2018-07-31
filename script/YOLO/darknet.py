@@ -91,7 +91,7 @@ def create_modules(blocks):
         # We use Bilinear2dUpsampling
         elif x["type"] == "upsample":
             stride = int(x["stride"])
-            upsample = nn.Upsample(scale_factor=2, mode="bilinear")
+            upsample = nn.Upsample(scale_factor=2, mode="bilinear", align_corners=True)
             module.add_module("upsample_{0}".format(index), upsample)
 
         # If it's a route layer
