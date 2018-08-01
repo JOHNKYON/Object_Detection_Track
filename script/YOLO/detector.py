@@ -117,7 +117,7 @@ if len(im_dim_list) % batch_size:
 
 if batch_size != 1:
     num_batches = len(imlist) // batch_size + leftover
-    im_dim_list = [torch.cat((im_batches[i*batch_size : min((i+1)*batch_size,
+    im_dim_list = [torch.cat((im_batches[i*batch_size: min((i+1)*batch_size,
                                                             len(im_batches))])) for i in range(num_batches)]
 
 write = 0
@@ -205,7 +205,7 @@ def write(x, results):
 
     # Output prediction String to output file
     if label in name_label.keys():
-        file.write("{label} {confidence} {x1} {x2} {y1} {y2}".format(label=name_label[label], confidence=x[5],
+        file.write("{label} {confidence} {x1} {x2} {y1} {y2} ".format(label=name_label[label], confidence=x[5],
                                                                      x1=c1[0], x2=c1[1], y1=c2[0], y2=c2[1]))
     return img
 
