@@ -51,8 +51,7 @@ num_classes = 80    #For COCO
 classes = load_classes("data/coco.names")
 
 # Prepare the outputfile
-file = open("out/submission.txt", 'w')
-file.write("ImageId,PredictionString")
+file = open("out/submission.txt", "a+")
 
 # Prepare label
 name_label = {}
@@ -236,5 +235,6 @@ print("{:25s}: {:2.3f}".format("Average time_per_img", (end - load_batch)/len(im
 print("----------------------------------------------------------")
 
 torch.cuda.empty_cache()
+file.close()
 
 
